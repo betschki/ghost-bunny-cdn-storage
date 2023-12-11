@@ -1,0 +1,12 @@
+{
+    "storage": {
+        "active": "bunny-cdn",
+        "bunny-cdn": {
+            "endpoint": "https://storage.bunnycdn.com",
+            "storageZone": "your-storage-zone",
+            "hostname": "cdn.your-pull-zone-hostname.com",
+            "folder": "a-folder-you-want-to-use",
+            "accessKey": "your-access-key"
+        }
+    }
+}

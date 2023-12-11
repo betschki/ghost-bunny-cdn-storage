@@ -1,0 +1,32 @@
+{
+  "name": "ghost-bunny-cdn-storage",
+  "version": "1.0.0",
+  "description": "BunnyCDNAdapter is a custom storage adapter for Ghost CMS, enabling you to store your media files using BunnyCDN's storage solutions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betschki/ghost-bunny-cdn-storage.git"
+  },
+  "keywords": [
+    "ghost",
+    "ghost",
+    "cms",
+    "storage",
+    "adapter",
+    "bunny",
+    "cdn",
+    "storage",
+    "bunnycdn",
+    "bunny",
+    "magicpages"
+  ],
+  "author": "Jannis Fedoruk-Betschki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/betschki/ghost-bunny-cdn-storage/issues"
+  },
+  "homepage": "https://github.com/betschki/ghost-bunny-cdn-storage#readme"
+}
