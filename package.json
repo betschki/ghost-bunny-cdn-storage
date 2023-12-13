@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/betschki/ghost-bunny-cdn-storage/issues"
   },
-  "homepage": "https://github.com/betschki/ghost-bunny-cdn-storage#readme"
+  "homepage": "https://github.com/betschki/ghost-bunny-cdn-storage#readme",
+  "dependencies": {
+    "ghost-storage-base": "^1.0.0"
+  }
 }
