@@ -163,6 +163,7 @@ class BunnyCDNAdapter extends BaseAdapter {
           'Content-Type': 'application/octet-stream',
         },
         body: fileStream,
+        duplex: 'half',
       });
     } catch (error) {
       throw new Error(`Error during upload: ${error.message}`);
