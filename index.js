@@ -94,10 +94,17 @@ class BunnyCDNAdapter extends BaseAdapter {
    */
   async read(filename) {
     try {
-      return fetch(this.constructBunnyCDNUrl(filename), {
+      const response = await fetch(this.constructBunnyCDNUrl(filename), {
         method: 'GET',
         headers: this.apiHeaders,
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.statusText}`);
+      }
+
+      const buffer = await response.buffer();
+      return buffer;
     } catch (error) {
       throw new Error(`Error reading file: ${error.message}`);
     }
@@ -139,12 +146,18 @@ class BunnyCDNAdapter extends BaseAdapter {
   }
 
   constructBunnyCDNUrl(filename) {
-    const folderPath = this.options.folder ? `/${this.options.folder}` : '';
+    const folderPath = this.options.folder
+      ? `/${this.options.folder}/${this.getTargetDir()}`
+      : this.getTargetDir();
+
     return `${this.options.endpoint}/${this.options.storageZone}${folderPath}/${filename}`;
   }
 
   constructDownloadUrl(filename) {
-    const folderPath = this.options.folder ? `/${this.options.folder}` : '';
+    const folderPath = this.options.folder
+      ? `/${this.options.folder}/${this.getTargetDir()}`
+      : this.getTargetDir();
+
     return `https://${this.options.hostname}${folderPath}/${filename}`;
   }
 
