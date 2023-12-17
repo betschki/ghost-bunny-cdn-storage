@@ -67,7 +67,14 @@ class BunnyCDNAdapter extends BaseAdapter {
    */
   serve() {
     return function customServe(req, res, next) {
-      next();
+        try {
+            const filename = req.path.replace(/^\//, '');
+            const fileStream = this.read(filename);
+            fileStream.pipe(res);
+        } catch (error) {
+            res.status(404)
+            next(error);
+        }
     };
   }
 
